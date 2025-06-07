@@ -62,7 +62,7 @@ a:hover {
 
 /* Header & Navigation */
 header {
-    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background for header */
+    background-color: rgba(0, 0, 0, 1); /* Semi-transparent dark background for header */
     color: var(--white-bg);
     padding: 10px 0;
     position: fixed;
@@ -93,6 +93,8 @@ nav {
     display: flex;
     margin: 0;
     padding: 0;
+    font-size: 16px;
+    color: lightgray;
 }
 
 .nav-links li {

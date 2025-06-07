@@ -1,0 +1,621 @@
+/* Global Styles & Variables (Inspired by Figma template aesthetics) */
+:root {
+    --primary-color: #00aaff; /* A prominent bright blue for accents/buttons */
+    --secondary-color: #bbbbbb; /* A muted light grey, often for secondary text */
+    --text-color: #f0f0f0; /* Light grey for general text */
+    --light-bg: rgba(255, 255, 255, 0.1); /* Very light transparent grey for subtle backgrounds */
+    --white-bg: rgba(255, 255, 255, 0.2); /* Slightly less transparent white for card backgrounds */
+    --border-color: rgba(255, 255, 255, 0.2); /* Light grey for borders with transparency */
+    --heading-color: #ffffff; /* Pure white for headings */
+    --footer-bg: rgba(0, 0, 0, 0.7); /* Darker transparent background for footer */
+    --shadow-color-light: rgba(255, 255, 255, 0.05); /* Light shadow for dark backgrounds */
+    --shadow-color-dark: rgba(0, 0, 0, 0.4); /* Darker shadow for overlay effects */
+}
+
+/* Basic Reset/Box-sizing */
+*, *::before, *::after {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    color: var(--text-color); /* Default text color set to light grey */
+    line-height: 1.6;
+    background-color: #000000; /* Pure black fallback */
+    background-image: url('port.png'); /* Your background image */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* Ensures background stays fixed during scroll */
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Poppins', sans-serif;
+    color: var(--heading-color); /* Headings are white */
+    margin-top: 0;
+    margin-bottom: 0.5em;
+    line-height: 1.2;
+}
+
+a {
+    text-decoration: none;
+    color: var(--primary-color); /* Links are bright blue */
+}
+
+a:hover {
+    text-decoration: underline;
+    color: var(--primary-color); /* Keep primary color on hover or slightly darker/lighter */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.section-padding {
+    padding: 80px 0;
+}
+
+/* Header & Navigation */
+header {
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background for header */
+    color: var(--white-bg);
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 5px var(--shadow-color-dark); /* Darker shadow for header */
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: bold;
+    color: var(--heading-color); /* Logo white */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: var(--white-bg); /* Nav links are light */
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--primary-color); /* Primary color on hover */
+}
+
+/* Hero Section */
+#hero {
+    padding-top: 100px; /* Adjust based on header height */
+    text-align: center;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: transparent; /* Allows background image to show */
+    color: var(--heading-color); /* Hero text white */
+}
+
+#hero h2 {
+    font-size: 48px;
+    margin-bottom: 10px;
+    color: var(--heading-color);
+}
+
+#hero p {
+    font-size: 20px;
+    color: var(--text-color); /* Hero paragraph light grey */
+    max-width: 800px;
+}
+
+/* About Me Section */
+#about {
+    background-color: transparent; /* Transparent to show background image */
+}
+
+#about h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: var(--heading-color);
+}
+
+.about-content {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+}
+
+.profile-text {
+    flex: 2;
+    line-height: 1.8;
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+.profile-text p {
+    margin-bottom: 15px;
+}
+
+/* Education Section */
+#education {
+    background-color: transparent;
+}
+
+#education h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: var(--heading-color);
+}
+
+.education-item {
+    background-color: var(--light-bg); /* Semi-transparent light background */
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color-dark); /* Darker shadow for cards */
+    transition: transform 0.3s ease;
+}
+
+.education-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color-dark); /* Enhanced shadow on hover */
+}
+
+.education-item h3 {
+    font-size: 22px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.education-item .institution {
+    font-weight: normal;
+    color: var(--secondary-color);
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+
+.education-item .dates {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-bottom: 10px;
+    display: block;
+}
+
+.education-item .grade {
+    font-weight: bold;
+    color: var(--text-color);
+}
+
+/* Experience Section */
+#experience {
+    background-color: transparent;
+}
+
+#experience h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: var(--heading-color);
+}
+
+.experience-item {
+    background-color: var(--light-bg);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color-dark);
+    transition: transform 0.3s ease;
+}
+
+.experience-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color-dark);
+}
+
+.experience-item h3 {
+    font-size: 24px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.experience-item .company {
+    font-weight: normal;
+    color: var(--secondary-color);
+    font-size: 20px;
+}
+
+.experience-item .dates {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    display: block;
+}
+
+.experience-item ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+    color: var(--text-color);
+}
+
+.experience-item ul li {
+    margin-bottom: 8px;
+}
+
+/* Projects Section */
+#projects {
+    background-color: transparent;
+}
+
+#projects h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: var(--heading-color);
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+.project-card {
+    background-color: var(--white-bg); /* Slightly less transparent white background */
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color-dark);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color-dark);
+}
+
+.project-card h3 {
+    font-size: 22px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.project-card .tech-stack {
+    font-style: italic;
+    color: var(--secondary-color);
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+.project-card ul {
+    list-style: disc;
+    margin-left: 20px;
+    padding: 0;
+    color: var(--text-color);
+    flex-grow: 1;
+}
+
+.project-card ul li {
+    margin-bottom: 8px;
+}
+
+/* Technical Skills Section */
+#skills {
+    background-color: transparent;
+}
+
+#skills h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: var(--heading-color);
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+}
+
+.skill-category {
+    background-color: var(--light-bg);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color-dark);
+    transition: transform 0.3s ease;
+}
+
+.skill-category:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color-dark);
+}
+
+.skill-category h3 {
+    font-size: 22px;
+    color: var(--primary-color);
+    margin-bottom: 15px;
+    text-align: center;
+}
+
+.skill-category ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.skill-category ul li {
+    background-color: rgba(0, 170, 255, 0.2); /* A semi-transparent version of your primary color */
+    padding: 10px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    text-align: center;
+    color: var(--text-color);
+    font-weight: 500;
+    transition: background-color 0.3s ease;
+}
+
+.skill-category ul li:hover {
+    background-color: rgba(0, 170, 255, 0.4); /* Slightly more opaque on hover */
+}
+
+/* Activities Section */
+#activities {
+    background-color: transparent;
+}
+
+#activities h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: var(--heading-color);
+}
+
+.activity-item {
+    background-color: var(--white-bg);
+    padding: 25px;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px var(--shadow-color-dark);
+    transition: transform 0.3s ease;
+}
+
+.activity-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px var(--shadow-color-dark);
+}
+
+.activity-item h3 {
+    font-size: 22px;
+    color: var(--primary-color);
+    margin-bottom: 10px;
+}
+
+.activity-item p {
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+/* Contact Me Section */
+#contact {
+    background-color: transparent;
+    text-align: center;
+}
+
+#contact h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 36px;
+    color: var(--heading-color);
+}
+
+.contact-content {
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.8;
+    color: var(--text-color);
+    font-size: 18px;
+}
+
+.contact-content p {
+    margin-bottom: 15px;
+}
+
+.contact-content a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.contact-content a:hover {
+    text-decoration: underline;
+    color: var(--primary-color); /* Maintain primary color on hover */
+}
+
+.social-icons {
+    margin-top: 30px;
+}
+
+.social-icons a {
+    color: var(--primary-color);
+    font-size: 30px;
+    margin: 0 15px;
+    transition: color 0.3s ease, transform 0.3s ease;
+    display: inline-block;
+}
+
+.social-icons a:hover {
+    color: #0088cc; /* Slightly darker primary on hover */
+    transform: scale(1.1);
+}
+
+/* Footer */
+footer {
+    background-color: var(--footer-bg);
+    color: var(--white-bg);
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+}
+
+footer p {
+    margin: 0;
+    font-size: 14px;
+}
+
+/* Responsive Design */
+
+/* Navigation Toggle Button (initially hidden) */
+.nav-toggle {
+    display: none; /* Hidden by default on larger screens */
+    background: none;
+    border: none;
+    font-size: 28px;
+    color: var(--white-bg);
+    cursor: pointer;
+    z-index: 1001; /* Ensure it's above other elements */
+}
+
+/* For screens smaller than 768px (e.g., Tablets) */
+@media (max-width: 768px) {
+    .nav-links {
+        position: absolute;
+        top: 60px; /* Adjust based on header height */
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8); /* Slightly darker semi-transparent background for mobile nav */
+        flex-direction: column;
+        align-items: center;
+        padding: 20px 0;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 5px 10px var(--shadow-color-dark);
+        transform: translateY(-100%); /* Start off-screen */
+        transition: transform 0.3s ease-in-out;
+        opacity: 0;
+        pointer-events: none; /* Disable interaction when hidden */
+    }
+
+    .nav-links.active {
+        transform: translateY(0); /* Slide into view */
+        opacity: 1;
+        pointer-events: all; /* Enable interaction when active */
+    }
+
+    .nav-links li {
+        margin: 10px 0; /* Stack links vertically */
+    }
+
+    .nav-toggle {
+        display: block; /* Show the toggle button on small screens */
+    }
+
+    nav {
+        justify-content: space-between; /* Space out logo and toggle */
+    }
+
+    .section-padding {
+        padding: 60px 20px; /* Reduce vertical padding and add horizontal */
+    }
+
+    #hero h2 {
+        font-size: 36px; /* Smaller heading on smaller screens */
+    }
+
+    #hero p {
+        font-size: 16px;
+    }
+
+    .about-content {
+        flex-direction: column; /* Ensure content stacks vertically */
+    }
+
+    .experience-item,
+    .project-card,
+    .skill-category,
+    .activity-item {
+        margin-bottom: 20px; /* Reduce margin */
+    }
+
+    .skills-grid,
+    .projects-grid {
+        grid-template-columns: 1fr; /* Stack items in a single column */
+        gap: 20px; /* Adjust gap */
+    }
+
+    .contact-content {
+        font-size: 16px;
+    }
+
+    .social-icons a {
+        font-size: 24px; /* Smaller social icons */
+        margin: 0 10px;
+    }
+}
+
+/* For screens smaller than 480px (e.g., Mobile Phones) */
+@media (max-width: 480px) {
+    .logo {
+        font-size: 20px; /* Even smaller logo */
+    }
+
+    #hero {
+        padding-top: 80px; /* Adjust padding for shorter header */
+    }
+
+    #hero h2 {
+        font-size: 30px;
+    }
+
+    #about h2,
+    #education h2,
+    #experience h2,
+    #projects h2,
+    #skills h2,
+    #activities h2,
+    #contact h2 {
+        font-size: 28px; /* Smaller section headings */
+    }
+
+    .experience-item h3,
+    .project-card h3,
+    .skill-category h3,
+    .activity-item h3 {
+        font-size: 20px;
+    }
+
+    .profile-text,
+    .experience-item ul,
+    .project-card ul,
+    .contact-content {
+        font-size: 15px; /* Smaller text sizes */
+    }
+}

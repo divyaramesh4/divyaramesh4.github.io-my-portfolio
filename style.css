@@ -28,6 +28,8 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed; /* Ensures background stays fixed during scroll */
+    /* NEW: Adjusted base font size for better desktop readability */
+    font-size: 18px;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -122,13 +124,13 @@ nav {
 }
 
 #hero h2 {
-    font-size: 48px;
+    font-size: 56px; /* Increased from 48px */
     margin-bottom: 10px;
     color: var(--heading-color);
 }
 
 #hero p {
-    font-size: 20px;
+    font-size: 24px; /* Increased from 20px */
     color: var(--text-color); /* Hero paragraph light grey */
     max-width: 800px;
 }
@@ -156,7 +158,7 @@ nav {
     flex: 2;
     line-height: 1.8;
     color: var(--text-color);
-    font-size: 18px;
+    font-size: 20px; /* Increased from 18px */
 }
 
 .profile-text p {
@@ -190,7 +192,7 @@ nav {
 }
 
 .education-item h3 {
-    font-size: 22px;
+    font-size: 24px; /* Increased from 22px */
     color: var(--primary-color);
     margin-bottom: 5px;
 }
@@ -212,6 +214,7 @@ nav {
 .education-item .grade {
     font-weight: bold;
     color: var(--text-color);
+    font-size: 18px; /* Added explicit font size if needed */
 }
 
 /* Experience Section */
@@ -264,6 +267,7 @@ nav {
     margin-left: 20px;
     padding: 0;
     color: var(--text-color);
+    font-size: 17px; /* Explicitly set for desktop */
 }
 
 .experience-item ul li {
@@ -322,6 +326,7 @@ nav {
     padding: 0;
     color: var(--text-color);
     flex-grow: 1;
+    font-size: 17px; /* Explicitly set for desktop */
 }
 
 .project-card ul li {
@@ -381,6 +386,7 @@ nav {
     color: var(--text-color);
     font-weight: 500;
     transition: background-color 0.3s ease;
+    font-size: 17px; /* Explicitly set for desktop */
 }
 
 .skill-category ul li:hover {
@@ -422,6 +428,7 @@ nav {
 .activity-item p {
     color: var(--text-color);
     line-height: 1.6;
+    font-size: 17px; /* Explicitly set for desktop */
 }
 
 /* Contact Me Section */
@@ -442,7 +449,7 @@ nav {
     margin: 0 auto;
     line-height: 1.8;
     color: var(--text-color);
-    font-size: 18px;
+    font-size: 20px; /* Increased from 18px */
 }
 
 .contact-content p {
@@ -547,11 +554,11 @@ footer p {
     }
 
     #hero h2 {
-        font-size: 36px; /* Smaller heading on smaller screens */
+        font-size: 36px; /* Original responsive size for smaller screens */
     }
 
     #hero p {
-        font-size: 16px;
+        font-size: 18px; /* Original responsive size for smaller screens (increased from 16px to match body) */
     }
 
     .about-content {
@@ -572,12 +579,29 @@ footer p {
     }
 
     .contact-content {
-        font-size: 16px;
+        font-size: 18px; /* Original responsive size for smaller screens (increased from 16px to match body) */
     }
 
     .social-icons a {
         font-size: 24px; /* Smaller social icons */
         margin: 0 10px;
+    }
+
+    /* Adjusted specific font sizes for readability on tablets */
+    .profile-text,
+    .experience-item ul,
+    .project-card ul,
+    .skill-category ul li,
+    .activity-item p {
+        font-size: 17px;
+    }
+
+    .education-item h3,
+    .experience-item h3,
+    .project-card h3,
+    .skill-category h3,
+    .activity-item h3 {
+        font-size: 20px;
     }
 }
 
@@ -615,7 +639,9 @@ footer p {
     .profile-text,
     .experience-item ul,
     .project-card ul,
-    .contact-content {
-        font-size: 15px; /* Smaller text sizes */
+    .contact-content,
+    .skill-category ul li,
+    .activity-item p {
+        font-size: 15px; /* Smaller text sizes for very small screens */
     }
 }

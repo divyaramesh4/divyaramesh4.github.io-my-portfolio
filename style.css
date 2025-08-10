@@ -62,7 +62,7 @@ a:hover {
 
 /* Header & Navigation */
 header {
-    background-color: rgba(0, 0, 0, 1); /* Semi-transparent dark background for header */
+    background-color: rgba(0, 0, 0, 0.7); /* Semi-transparent dark background for header */
     color: var(--white-bg);
     padding: 10px 0;
     position: fixed;
@@ -93,8 +93,6 @@ nav {
     display: flex;
     margin: 0;
     padding: 0;
-    font-size: 16px;
-    color: white;
 }
 
 .nav-links li {
@@ -102,7 +100,7 @@ nav {
 }
 
 .nav-links a {
-    color: var(--white-bg); /* Nav links are light */
+    color: rgba(255, 255, 255);
     text-decoration: none;
     font-weight: bold;
     transition: color 0.3s ease;
@@ -646,4 +644,37 @@ footer p {
     .activity-item p {
         font-size: 15px; /* Smaller text sizes for very small screens */
     }
+}
+.project-links {
+    margin-top: auto; /* Pushes the links to the bottom of the card */
+    display: flex; /* Aligns buttons nicely if there are multiple */
+    flex-wrap: wrap; /* Allows buttons to wrap on smaller screens */
+    gap: 10px; /* Space between buttons */
+}
+
+.project-btn {
+    display: inline-block;
+    background-color: #007bff; /* A standard blue color for buttons */
+    color: #fff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none; /* Remove underline from links */
+    font-weight: 600;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.project-btn:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+    transform: translateY(-2px); /* Slight lift effect on hover */
+}
+
+/* Basic responsiveness for projects-grid */
+@media (max-width: 768px) {
+    .projects-grid {
+        grid-template-columns: 1fr; /* Stack projects on smaller screens */
+    }
+}
+.contact {
+    font: size 19px;
+    font-weight: 900;
 }
